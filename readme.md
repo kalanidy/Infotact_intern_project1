@@ -51,3 +51,27 @@ All datasets were successfully loaded and are ready for data preprocessing and a
 
 **Author:** A. Kalanidy
 ```
+
+# Week 1 - Day 3
+
+## CRM Data Cleaning
+
+### Objective
+Clean customer and transaction data by removing duplicate, invalid, and test records.
+
+### Tasks Completed
+- Removed duplicate customer IDs.
+- Removed invalid and test customer records.
+- Removed duplicate transactions.
+- Removed invalid purchase records.
+- Validated customer IDs.
+- Saved the cleaned CRM datasets.
+
+### Output Files
+- `customers_clean.csv`
+- `transactions_clean.csv`
+
+### Outcome
+The cleaned CRM data is ready for exploratory data analysis on Day 4.
+
+**Author:** A. Kalanidy
