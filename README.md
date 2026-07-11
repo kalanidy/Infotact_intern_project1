@@ -79,3 +79,21 @@ Analyze CRM conversions based on volume, timing, and value.
 The cleaned CRM data has been explored and is ready for validation against Web Analytics data on Day 5.
 
 ---
+
+# Week 1 - Day 5
+
+## CRM and Web Analytics Validation
+
+### Objective
+Validate CRM conversion data against Web Analytics data by matching customer IDs.
+
+### Tasks Completed
+- Matched CRM customers with Web Analytics users.
+- Identified matched and unmatched customer IDs.
+- Validated transaction customers against web activity.
+- Calculated customer ID match rates.
+- Added a Web Analytics match flag to transactions.
+
+### Outcome
+CRM conversion data was successfully validated against Web Analytics data and is ready for further attribution analysis.
+
