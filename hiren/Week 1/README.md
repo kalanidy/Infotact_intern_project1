@@ -6,12 +6,13 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 (see main `README.md` on `main` for full team roles and project overview)
 
 ## Status
-Week 1, Day 3 of 28 — in progress
+Week 1, Day 4 of 28 — in progress
 
 ## Files in this branch
-- `member_a_ad_spend.ipynb` — main working notebook (Days 1-3 so far)
+- `member_a_ad_spend.ipynb` — main working notebook (Days 1-4 so far)
 - `data/ad_spend.csv`, `data/campaigns.csv` — local only, not committed (see `.gitignore`)
 - `cleaned/ad_spend_clean.csv` — output of Day 3 cleaning, local only
+- `charts/spend_by_channel.png`, `charts/top10_campaigns.png`, `charts/daily_spend_trend.png` — Day 4 EDA charts, local only
 
 ## Progress Log
 
@@ -33,6 +34,15 @@ Week 1, Day 3 of 28 — in progress
   in the main README
 - Saved cleaned output to `cleaned/ad_spend_clean.csv`
 
+### Day 4 — EDA on Ad Spend: spend by channel/campaign/day
+- Spend by channel: Affiliate highest, Social lowest (matches Day 2 totals)
+- Spend by campaign: Campaign #48 is the single highest-spend campaign
+  ($1,001.70) — flagged for a possible outlier check on Day 5
+- Daily spend: ranges $10-$78.36/day, averaging ~$27.79/day across 967
+  active spend-days, no obvious seasonal spike pattern at a glance
+- Saved 3 charts to `charts/`: spend by channel, top 10 campaigns, daily
+  spend trend over time
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -45,5 +55,6 @@ Week 1, Day 3 of 28 — in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 4)
-- EDA on Ad Spend: spend by channel/campaign/day, commit charts + notes
+## Next up (Day 5)
+- Identify and flag outlier/suspicious spend entries (starting with Campaign #48)
+-
