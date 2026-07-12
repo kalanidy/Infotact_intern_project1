@@ -97,3 +97,16 @@ Validate CRM conversion data against Web Analytics data by matching customer IDs
 ### Outcome
 CRM conversion data was successfully validated against Web Analytics data and is ready for further attribution analysis.
 
+# Week 1 - Day 6
+
+## Peer Review and CRM Validation
+
+### Tasks Completed
+- Reviewed Member A's Ad Spend cleaning notebook.
+- Reviewed Member B's Web Analytics cleaning notebook.
+- Revalidated the CRM cleaning workflow.
+- Checked duplicate and missing IDs.
+- Verified customer-to-transaction relationships.
+
+### Outcome
+The CRM cleaning workflow was validated and confirmed ready for finalization.
