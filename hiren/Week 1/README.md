@@ -43,6 +43,18 @@ Week 1, Day 4 of 28 — in progress
 - Saved 3 charts to `charts/`: spend by channel, top 10 campaigns, daily
   spend trend over time
 
+### Day 5 — Identify and flag outlier/suspicious spend entries
+- Cleared Day 4's Campaign #48 flag — it's a long-running campaign (90
+  days of spend), not a single suspicious entry
+- No structural issues found: no zero-click spend, no duplicate
+  campaign+date charges, no negative values, no zero impressions
+- Plain IQR is unreliable on this data (spend clusters at a $10 floor) —
+  used implied CPC (spend/clicks) instead as a better signal
+- Highest implied CPC: $17.63/click (2 clicks, low-volume day) — not
+  necessarily an error, just noisy on low-click days
+- Conclusion: dataset has no clearly suspicious spend entries going into
+  Week 2
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -55,6 +67,6 @@ Week 1, Day 4 of 28 — in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 5)
-- Identify and flag outlier/suspicious spend entries (starting with Campaign #48)
+## Next up (Day 6)
+- Peer-review Member B & C's cleaning notebooks; fix any issues in own Ad Spend script
 -
