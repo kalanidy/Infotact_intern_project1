@@ -81,5 +81,3 @@ Week 1 - completed (Days 1-7)
 
 ## Next up (Week 2, Day 8)
 - Design relational schema for spend/web/conversion tables
-- Peer-review Member B & C's cleaning notebooks; fix any issues in own Ad Spend script
--
