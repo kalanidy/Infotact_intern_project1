@@ -7,6 +7,7 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 
 ## Status
 Week 1 - completed (Days 1-7)
+Week 2, Day 8 0f 28 - in progress
 
 ## Files in this branch
 - `hiren_ad_spend.ipynb` — main working notebook (Days 1-4 so far)
@@ -16,6 +17,7 @@ Week 1 - completed (Days 1-7)
 
 ## Progress Log
 
+## Week 1
 ### Day 1 — Repo & Kanban setup
 - created Main branch README.md 
 - Added own Week 1 Issues (#8-#12)
@@ -67,6 +69,20 @@ Week 1 - completed (Days 1-7)
 - cleared all cell outputs before final commit
 - closed Issues #8 - #12
 
+## Week 2
+### Day 8 — Design relational schema for spend/web/conversion table
+- Designed full schema for all 6 tables: Campaigns, ad_spend, customers, products,
+  events, transactions
+- Central join keys: campaign_id, customer_id, product_id
+- **Key Findings:** campaign_id = 0 in events/transactions is a  deliberate sentinel
+  meaning "no campaign attribution" - verified 100% of paid traffic has a real
+  campaign_id, nno exceptions. Not a data error.
+- Decision: convert 0 → NULL during Day 9 load so campaign_id behaves as aa proper
+  nullable foreign key (avoids silent misjoins or broken FK constraints
+- Also applied the traaffic_source/campaigns.channel standardization fix myself
+  (events.csv, campaigns.csv) since it was still blocking Week 2 joins as of today
+  - see main README for detaails
+  
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -79,5 +95,5 @@ Week 1 - completed (Days 1-7)
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Week 2, Day 8)
-- Design relational schema for spend/web/conversion tables
+## Next up (Week 2, Day 9)
+- Create the database (PostgreSQL); load cleaned ad_spend data
