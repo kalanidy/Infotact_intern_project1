@@ -6,11 +6,11 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 (see main `README.md` on `main` for full team roles and project overview)
 
 ## Status
-Week 1, Day 4 of 28 — in progress
+Week 1 - completed (Days 1-7)
 
 ## Files in this branch
-- `member_a_ad_spend.ipynb` — main working notebook (Days 1-4 so far)
-- `data/ad_spend.csv`, `data/campaigns.csv` — local only, not committed (see `.gitignore`)
+- `hiren_ad_spend.ipynb` — main working notebook (Days 1-4 so far)
+- `ad_spend.csv`, `campaigns.csv` — local only, not committed (see `.gitignore`)
 - `cleaned/ad_spend_clean.csv` — output of Day 3 cleaning, local only
 - `charts/spend_by_channel.png`, `charts/top10_campaigns.png`, `charts/daily_spend_trend.png` — Day 4 EDA charts, local only
 
@@ -55,6 +55,18 @@ Week 1, Day 4 of 28 — in progress
 - Conclusion: dataset has no clearly suspicious spend entries going into
   Week 2
 
+### Day 6 — Peer review
+- Reviewed Member B and C's notebooks; found real issues (traffic_source casting
+  not standardized, Day 4/5 not using cleaned data, hardcoded paths for B; refund
+  filtering not explicit, hardcoded path for C)
+- Sent direct, actionable feedback to both (see Week1_Peer_Review.md)
+- Reeviewed own script ffor the same issues - none found
+
+### Day 7 — Finalize notebook, uppdate README, close Week 1 Issues
+- Adde Week 1 Summary section to notebook
+- cleared all cell outputs before final commit
+- closed Issues #8 - #12
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -67,6 +79,7 @@ Week 1, Day 4 of 28 — in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 6)
+## Next up (Week 2, Day 8)
+- Design relational schema for spend/web/conversion tables
 - Peer-review Member B & C's cleaning notebooks; fix any issues in own Ad Spend script
 -
