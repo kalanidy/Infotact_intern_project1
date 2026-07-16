@@ -8,3 +8,23 @@
 
 ### Outcome
 The Linear Attribution logic is ready for SQL implementation.
+
+# Week 2 - Day 2
+
+## Linear Attribution SQL
+
+### Objective
+Implement the Linear Attribution model using SQL.
+
+### Tasks Completed
+- Connected customer transactions with previous marketing touchpoints.
+- Counted touchpoints for each conversion.
+- Assigned equal attribution weight to every touchpoint.
+- Calculated attributed revenue.
+- Exported the attribution results to `linear_attribution.csv`.
+
+### Output
+- `linear_attribution.csv`
+
+### Outcome
+The Linear Attribution model was successfully implemented and is ready for validation.
