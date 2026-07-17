@@ -28,3 +28,22 @@ Implement the Linear Attribution model using SQL.
 
 ### Outcome
 The Linear Attribution model was successfully implemented and is ready for validation.
+
+# Week 2 - Day 3
+
+## Linear Attribution Validation
+
+### Objective
+Validate that the Linear Attribution weights sum to 100% for each conversion.
+
+### Tasks Completed
+- Verified attribution weights for every transaction.
+- Calculated total weight per conversion.
+- Identified PASS/FAIL status.
+- Exported the validation report.
+
+### Output
+- `linear_attribution_validation.csv`
+
+### Outcome
+The Linear Attribution model was successfully validated.
