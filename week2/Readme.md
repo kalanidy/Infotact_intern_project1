@@ -47,3 +47,22 @@ Validate that the Linear Attribution weights sum to 100% for each conversion.
 
 ### Outcome
 The Linear Attribution model was successfully validated.
+
+# Week 2 - Day 4
+
+## Attribution Model Comparison
+
+### Objective
+Compare First-Click, Last-Click, and Linear attribution models.
+
+### Tasks Completed
+- Implemented First-Click attribution.
+- Implemented Last-Click attribution.
+- Compared all three attribution models.
+- Exported the comparison results.
+
+### Output
+- `attribution_comparison.csv`
+
+### Outcome
+The attribution models were successfully compared for each customer conversion.
