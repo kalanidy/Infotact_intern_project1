@@ -7,13 +7,19 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 
 ## Status
 Week 1 - completed (Days 1-7)
-Week 2, Day 8 0f 28 - in progress
+Week 2, Day 9 0f 28 - in progress
 
 ## Files in this branch
-- `hiren_ad_spend.ipynb` — main working notebook (Days 1-4 so far)
+- `hiren_ad_spend.ipynb` — Weekkk 1 EDA notebook (Complete)
 - `ad_spend.csv`, `campaigns.csv` — local only, not committed (see `.gitignore`)
 - `cleaned/ad_spend_clean.csv` — output of Day 3 cleaning, local only
 - `charts/spend_by_channel.png`, `charts/top10_campaigns.png`, `charts/daily_spend_trend.png` — Day 4 EDA charts, local only
+- `Week1_Peer_Review.md` — Day 6 peer review notes for Yash and Kalanidy
+- `hiren_schema_design.md` — Day 8 relational schema design
+- `hiren_database_postgres.ipynb` — Week 2 SQL/Notebook (Day 9, PostgreSQL)
+- `.env` — local database credentials, never committed (see .gitignore)
+- `.gitignore` — excludes .env, data/, *.csv, checkpointd
+- `ad_spend.csv, campaigns.csv` — local only, not committed (see .gitignore)
 
 ## Progress Log
 
@@ -81,7 +87,28 @@ Week 2, Day 8 0f 28 - in progress
   nullable foreign key (avoids silent misjoins or broken FK constraints
 - Also applied the traaffic_source/campaigns.channel standardization fix myself
   (events.csv, campaigns.csv) since it was still blocking Week 2 joins as of today
-  - see main README for detaails
+  see main README for detaails
+- Added Week 2 issues (#31 - #37)
+
+### Day 9 — Create database, load cleaned Ad Spend data
+- Used PostgreSQL (not SQLite) per team decision — created attribution
+  database and both tables (campaigns, ad_spend) per Day 8 schema
+- Credentials loaded from .env (never hardcoded/committed) — .gitignore
+  added to cover .env, raw data files, and Jupyter checkpoints
+- Debugging notes (kept for reference, since these will likely recur for
+  teammates setting up their own connections):
+  - Password contains @ — had to URL-encode with urllib.parse.quote_plus()
+    since SQLAlchemy misreads @ as the user/host separator otherwise
+  - attribution database had to be created manually first
+    (CREATE DATABASE attribution;) — create_engine() doesn't do this
+  - to_sql(if_exists='replace') failed with a foreign key conflict
+    (Postgres won't drop campaigns while ad_spend references it) —
+    fixed by switching to if_exists='append' plus a TRUNCATE cell to
+    keep re-runs safe
+- All verification passed: row counts match source CSVs exactly (50
+  campaigns, 2,599 spend rows), spend-by-channel matches Week 1's pandas
+  output exactly, and the ad_spend–campaigns join returns all 2,599
+  rows with no orphans
   
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
@@ -95,5 +122,5 @@ Week 2, Day 8 0f 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Week 2, Day 9)
-- Create the database (PostgreSQL); load cleaned ad_spend data
+## Next up (Day 10)
+- Load cleaned CRM Conversion data into the database; verify row counts
