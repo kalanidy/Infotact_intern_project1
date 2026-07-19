@@ -7,10 +7,10 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 
 ## Status
 Week 1 - completed (Days 1-7)
-Week 2, Day 9 0f 28 - in progress
+Week 2, Day 10 0f 28 - in progress
 
 ## Files in this branch
-- `hiren_ad_spend.ipynb` — Weekkk 1 EDA notebook (Complete)
+- `hiren_ad_spend.ipynb` — Week 1 EDA notebook (Complete)
 - `ad_spend.csv`, `campaigns.csv` — local only, not committed (see `.gitignore`)
 - `cleaned/ad_spend_clean.csv` — output of Day 3 cleaning, local only
 - `charts/spend_by_channel.png`, `charts/top10_campaigns.png`, `charts/daily_spend_trend.png` — Day 4 EDA charts, local only
@@ -109,7 +109,25 @@ Week 2, Day 9 0f 28 - in progress
   campaigns, 2,599 spend rows), spend-by-channel matches Week 1's pandas
   output exactly, and the ad_spend–campaigns join returns all 2,599
   rows with no orphans
-  
+
+### Day 10 — Load cleaned CRM Conversion data, verify row counts
+- Had to create customers and products tables too (not in Day 9 scope)
+  since transactions has foreign keys to both
+- Replicated Kalanidy's Week 1 cleaning logic directly (dedup by
+  transaction_id, filter quantity>0 and gross_revenue>=0, filter to valid
+  customer_ids) rather than wait on a handoff file — raw 103,127 rows →
+  cleaned 89,974, confirmed exact match to the pre-calculated expected count
+- Applied Day 8's campaign_id = 0 → NULL finding for real this time —
+  18,239 rows converted, 71,735 kept a real campaign_id
+- Two boolean type mismatches hit and fixed: products.is_premium and
+  transactions.refund_flag both came in as 0/1 integers from the CSVs,
+  but the table schema defines them as BOOLEAN — Postgres doesn't
+  auto-convert. Fixed both with .astype(bool) before loading
+- All verification passed: customers 100,000/100,000, products 2,000/2,000,
+  transactions 89,974/89,974, and the transactions–customers–campaigns
+  join (LEFT JOIN for campaigns, since ~18k rows have no attribution)
+  returns all 89,974 rows with nothing dropped
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -122,5 +140,5 @@ Week 2, Day 9 0f 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 10)
-- Load cleaned CRM Conversion data into the database; verify row counts
+## Next up (Day 11)
+Write helper SQL views for spend aggregation (by channel/campaign/day)
