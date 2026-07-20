@@ -7,7 +7,7 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 
 ## Status
 Week 1 - completed (Days 1-7)
-Week 2, Day 10 0f 28 - in progress
+Week 2, Day 12 0f 28 - in progress
 
 ## Files in this branch
 - `hiren_ad_spend.ipynb` — Week 1 EDA notebook (Complete)
@@ -141,6 +141,18 @@ Week 2, Day 10 0f 28 - in progress
   $26,876.24 grand total — confirms no view is silently dropping or
   double-counting rows via a bad GROUP BY or JOIN
 
+### Day 12 — Add indexes on the spend table for query performance
+- Indexed campaign_id (join key) and date (high cardinality, used in
+  Day 11's daily view) — deliberately did NOT index channel (only 5
+  distinct values on 2,599 rows, poor index selectivity)
+- Verified via pg_indexes: 3 total indexes exist (automatic PK index on
+  spend_id, plus the two new ones)
+- Ran EXPLAIN on the Day 9 join query — confirmed Postgres actually uses
+  idx_ad_spend_campaign_id (Index Only Scan), not just created-and-ignored
+- Documented honestly that ad_spend's small size (2,599 rows) means the
+  indexes won't show a dramatic measurable speedup today — the value is
+  correct practice and readiness for scale, not a benchmark win here
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -153,5 +165,5 @@ Week 2, Day 10 0f 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 12)
-- Add indexes on the spend table for query performance
+## Next up (Day 13)
+- Test schema joins across spend, web, and CRM tables end-to-end
