@@ -73,3 +73,32 @@ Sequence every customer's interaction history using SQL Window Functions. This h
 ## Outcome
 
 Successfully generated ordered customer journeys that will be used for multi-touch attribution analysis and ROI calculations.
+
+# Day 11 - Query Optimization
+
+## Objective
+
+Improve SQL query performance for customer journey sequencing using indexes and PostgreSQL query optimization techniques.
+
+## Tasks Completed
+
+- Created indexes on customer_id and timestamp.
+- Created a composite index for customer_id and timestamp.
+- Analyzed the events table using ANALYZE.
+- Examined query execution using EXPLAIN ANALYZE.
+- Executed an optimized customer journey sequencing query.
+- Identified customers with the highest number of events.
+
+## SQL Concepts Used
+
+- CREATE INDEX
+- Composite Index
+- ANALYZE
+- EXPLAIN ANALYZE
+- ROW_NUMBER()
+- GROUP BY
+- ORDER BY
+
+## Outcome
+
+Optimized analytical queries for faster execution, improving the performance of customer journey analysis.
