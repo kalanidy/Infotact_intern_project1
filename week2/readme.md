@@ -42,3 +42,34 @@ Validate the imported marketing datasets to ensure data quality before performin
 ## Outcome
 
 The imported datasets were validated successfully and confirmed to be ready for analytical queries.
+
+# Day 10 - Customer Journey Sequencing
+
+## Objective
+
+Sequence every customer's interaction history using SQL Window Functions. This helps analyze how customers interact with marketing campaigns before making a purchase.
+
+## Tasks Completed
+
+- Displayed raw customer event data.
+- Generated customer journey sequence using `ROW_NUMBER()`.
+- Sequenced events within each session.
+- Counted the total number of events per customer.
+- Identified first and last customer interactions.
+- Built a chronological customer journey timeline.
+- Verified customer journey statistics.
+
+## SQL Concepts Used
+
+- ROW_NUMBER()
+- OVER()
+- PARTITION BY
+- ORDER BY
+- COUNT()
+- MIN()
+- MAX()
+- GROUP BY
+
+## Outcome
+
+Successfully generated ordered customer journeys that will be used for multi-touch attribution analysis and ROI calculations.
