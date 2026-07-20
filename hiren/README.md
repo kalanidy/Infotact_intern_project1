@@ -6,8 +6,8 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 (see main `README.md` on `main` for full team roles and project overview)
 
 ## Status
-Week 1 - completed (Days 1-7)
-Week 2, Day 12 0f 28 - in progress
+Week 1 - completed (Days 1-7)  
+Week 2, Day 13 0f 28 - in progress
 
 ## Files in this branch
 - `hiren_ad_spend.ipynb` — Week 1 EDA notebook (Complete)
@@ -153,6 +153,22 @@ Week 2, Day 12 0f 28 - in progress
   indexes won't show a dramatic measurable speedup today — the value is
   correct practice and readiness for scale, not a benchmark win here
 
+### Day 13 — Test schema joins across spend, web, and CRM tables end-to-end
+- Checked table existence first: events (Web Analytics, Member B's
+  table) is not yet loaded — real cross-team blocker, not something
+  fixable from this notebook. Flagged to team; deferring to work on it
+  myself later given current team capacity (down to 2 active members
+  this week)
+- Tested everything that doesn't depend on events: ad_spend fully
+  joins to campaigns (2,599/2,599), transactions fully joins to
+  customers, products, and the full chain with LEFT JOIN campaigns
+  (89,974/89,974 at every step) — zero data loss across 5 tables and 4
+  join relationships
+- Pre-wrote and pre-validated the events join query (Step 3) against
+  the real data so it's ready to run the moment the table exists —
+  expected 2,000,000 rows, 1,799,629 with a product, 200,371 view-only
+  events with no product (expected, not an error)
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -165,5 +181,5 @@ Week 2, Day 12 0f 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 13)
-- Test schema joins across spend, web, and CRM tables end-to-end
+## Next up (Day 14)
+- Commit final DB setup scripts; close own Week-2 Issues
