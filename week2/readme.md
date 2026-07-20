@@ -166,3 +166,38 @@ Analyze customer journeys by calculating the time taken between the first and la
 ## Outcome
 
 Calculated customer journey durations and summarized customer interaction behavior. These insights will support later marketing attribution and ROI analysis.
+
+# Day 14 - Customer Journey Path Summary
+
+## Objective
+
+Aggregate customer journey data into meaningful summaries for marketing attribution and ROI analysis.
+
+## Tasks Completed
+
+- Generated customer journey summaries.
+- Calculated total events per customer.
+- Measured journey duration.
+- Summarized campaign participation.
+- Analyzed traffic source performance.
+- Compared device usage.
+- Calculated average session duration.
+- Identified the most active customers.
+- Produced overall journey statistics.
+- Ranked campaigns by engagement.
+
+## SQL Concepts Used
+
+- COUNT()
+- COUNT(DISTINCT)
+- GROUP BY
+- ORDER BY
+- MIN()
+- MAX()
+- AVG()
+- EXTRACT()
+- ROUND()
+
+## Outcome
+
+Created aggregated customer journey summaries that provide insights into customer behavior, campaign performance, and engagement trends. These summaries form the basis for the attribution models and ROI dashboard.
