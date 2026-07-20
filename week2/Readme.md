@@ -66,3 +66,20 @@ Compare First-Click, Last-Click, and Linear attribution models.
 
 ### Outcome
 The attribution models were successfully compared for each customer conversion.
+
+# Week 2 - Day 5
+
+## Linear Attribution Documentation
+
+### Objective
+Document the Linear Attribution model and its implementation.
+
+### Tasks Completed
+- Documented the Linear Attribution logic.
+- Explained attribution weight calculation.
+- Added an example customer journey.
+- Listed SQL scripts and output files.
+- Updated Week 2 documentation.
+
+### Outcome
+The Linear Attribution model documentation is complete and ready for review.
