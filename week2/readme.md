@@ -102,3 +102,35 @@ Improve SQL query performance for customer journey sequencing using indexes and 
 ## Outcome
 
 Optimized analytical queries for faster execution, improving the performance of customer journey analysis.
+
+# Day 12 - Customer Journey Validation
+
+## Objective
+
+Validate customer journey sequences generated using SQL window functions and ensure the event data is consistent before performing attribution modeling.
+
+## Tasks Completed
+
+- Verified customer journey sequence using `ROW_NUMBER()`.
+- Counted total events for each customer.
+- Identified the first and last interaction for every customer.
+- Verified customers with multiple interactions.
+- Validated session-level event ordering.
+- Analyzed event type distribution.
+- Reviewed campaign usage across events.
+- Reviewed device type distribution.
+- Generated a customer journey summary.
+
+## SQL Concepts Used
+
+- ROW_NUMBER()
+- COUNT()
+- MIN()
+- MAX()
+- GROUP BY
+- HAVING
+- ORDER BY
+
+## Outcome
+
+Confirmed that customer journeys are correctly ordered and validated for use in multi-touch attribution and ROI analysis.
