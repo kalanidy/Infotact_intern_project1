@@ -134,3 +134,35 @@ Validate customer journey sequences generated using SQL window functions and ens
 ## Outcome
 
 Confirmed that customer journeys are correctly ordered and validated for use in multi-touch attribution and ROI analysis.
+
+# Day 13 - Customer Path Duration Analysis
+
+## Objective
+
+Analyze customer journeys by calculating the time taken between the first and last interaction of each customer.
+
+## Tasks Completed
+
+- Identified first and last customer interactions.
+- Calculated journey duration.
+- Computed journey duration in hours and days.
+- Counted customer events.
+- Calculated average session duration.
+- Identified the longest customer journeys.
+- Found customers with only one interaction.
+- Generated an overall dataset summary.
+
+## SQL Concepts Used
+
+- MIN()
+- MAX()
+- COUNT()
+- AVG()
+- GROUP BY
+- HAVING
+- EXTRACT()
+- ORDER BY
+
+## Outcome
+
+Calculated customer journey durations and summarized customer interaction behavior. These insights will support later marketing attribution and ROI analysis.
