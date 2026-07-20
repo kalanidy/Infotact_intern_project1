@@ -7,7 +7,7 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 
 ## Status
 Week 1 - completed (Days 1-7)  
-Week 2, Day 13 0f 28 - in progress
+Week 2 - completed (Day 8-14)
 
 ## Files in this branch
 - `hiren_ad_spend.ipynb` — Week 1 EDA notebook (Complete)
@@ -169,6 +169,23 @@ Week 2, Day 13 0f 28 - in progress
   expected 2,000,000 rows, 1,799,629 with a product, 200,371 view-only
   events with no product (expected, not an error)
 
+### Day 14 — Commit final DB setup scripts, close own Week-2 Issues
+- Added a Week 2 summary table to the notebook covering Days 8-14
+- Database now holds: campaigns (50), ad_spend (2,599), customers
+  (100,000), products (2,000), transactions (89,974 after cleaning),
+  3 views, 2 indexes
+- Closed Issues #31, #32, #33, #34, #35, #36, #37. Issue #36 closed as
+  "partially complete" — blocked on events (Web Analytics), a
+  cross-team dependency not resolvable from this notebook
+- Documented Week 2's debugging lessons (password encoding, manual DB
+  creation, FK-safe loading pattern, boolean type casting) for whoever
+  sets up their own local connection next
+- Flagged forward to Week 3: CAC calculation likely needs events too —
+  worth raising with the team before Week 3 starts, not discovering it
+  mid-week
+
+## Week 2 complete (Days 8-14) — see notebook Day 14 summary for full detail
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -181,5 +198,5 @@ Week 2, Day 13 0f 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 14)
-- Commit final DB setup scripts; close own Week-2 Issues
+## Next up (Week 3, Day 15)
+- Calculate Total Spend per channel/campaign/day (SQL aggregation)
