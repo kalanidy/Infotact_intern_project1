@@ -128,6 +128,19 @@ Week 2, Day 10 0f 28 - in progress
   join (LEFT JOIN for campaigns, since ~18k rows have no attribution)
   returns all 89,974 rows with nothing dropped
 
+### Day 11 — Write helper SQL views for spend aggregation
+- Built 3 views (not one-off queries) so Week 3's KPI calculations
+  (CPC, CAC, ROAS) can reference these directly: vw_spend_by_channel,
+  vw_spend_by_campaign (joined to campaigns for channel/objective
+  context), vw_spend_by_day
+- All expected numbers pre-validated against Week 1's pandas output and
+  Day 9's SQL output before writing the views — every view matched exactly
+  on first run (affiliate $6,454.96 → social $4,176.33; campaign #48
+  leading at $1,001.70; 967 distinct spend days)
+- Cross-check: all 3 views plus the raw ad_spend table sum to the same
+  $26,876.24 grand total — confirms no view is silently dropping or
+  double-counting rows via a bad GROUP BY or JOIN
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -140,5 +153,5 @@ Week 2, Day 10 0f 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 11)
-Write helper SQL views for spend aggregation (by channel/campaign/day)
+## Next up (Day 12)
+- Add indexes on the spend table for query performance
