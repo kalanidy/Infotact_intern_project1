@@ -83,3 +83,16 @@ Document the Linear Attribution model and its implementation.
 
 ### Outcome
 The Linear Attribution model documentation is complete and ready for review.
+
+# Week 2 - Day 6
+
+## Peer Review
+
+### Tasks Completed
+- Reviewed First-Click Attribution SQL.
+- Reviewed Last-Click Attribution SQL.
+- Verified attribution logic.
+- Confirmed SQL output consistency.
+
+### Outcome
+Peer review completed successfully.
