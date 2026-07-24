@@ -7,19 +7,20 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 
 ## Status
 Week 1 - completed (Days 1-7)  
-Week 2 - completed (Day 8-14)
+Week 2 - completed (Day 8-14)  
+Week 3, Day 15 of 28 - in progress
 
 ## Files in this branch
 - `hiren_ad_spend.ipynb` — Week 1 EDA notebook (Complete)
-- `ad_spend.csv`, `campaigns.csv` — local only, not committed (see `.gitignore`)
 - `cleaned/ad_spend_clean.csv` — output of Day 3 cleaning, local only
 - `charts/spend_by_channel.png`, `charts/top10_campaigns.png`, `charts/daily_spend_trend.png` — Day 4 EDA charts, local only
 - `Week1_Peer_Review.md` — Day 6 peer review notes for Yash and Kalanidy
 - `hiren_schema_design.md` — Day 8 relational schema design
-- `hiren_database_postgres.ipynb` — Week 2 SQL/Notebook (Day 9, PostgreSQL)
+- `hiren_database_postgres.ipynb` — Week 2 SQL/Notebook (PostgreSQL - Complete)
 - `.env` — local database credentials, never committed (see .gitignore)
 - `.gitignore` — excludes .env, data/, *.csv, checkpointd
 - `ad_spend.csv, campaigns.csv` — local only, not committed (see .gitignore)
+- `hiren_week3_kpis.ipynb` —  Week 3 SQL/Notebook (PostgreSQL)
 
 ## Progress Log
 
@@ -186,6 +187,20 @@ Week 2 - completed (Day 8-14)
 
 ## Week 2 complete (Days 8-14) — see notebook Day 14 summary for full detail
 
+## Week 3
+
+### Day 15 — Calculate Total Spend per channel/campaign/day
+- Reused Week 2's three views (`vw_spend_by_channel`,
+  `vw_spend_by_campaign`, `vw_spend_by_day`) rather than duplicating
+  logic — all three still return identical numbers to Week 2, confirming
+  the data hasn't drifted
+- Added a `GROUPING SETS` query to genuinely fulfill "Total Spend per
+  channel/campaign/day" as one combined deliverable — channel, campaign,
+  and day totals plus the grand total, all in a single table scan
+- Verified the `GROUPING SETS` grand total ($26,876.24) matches the raw
+  `ad_spend` table total exactly — `Match: True`, no rows lost or
+  double-counted across the four grouping levels
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -198,5 +213,5 @@ Week 2 - completed (Day 8-14)
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Week 3, Day 15)
-- Calculate Total Spend per channel/campaign/day (SQL aggregation)
+## Next up (Day 16)
+- Calculate Cost Per Click (CPC) = Spend / Clicks
