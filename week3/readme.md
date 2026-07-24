@@ -15,4 +15,23 @@ Prepare revenue data for ROAS calculation by summarizing revenue for each market
 - `revenue_by_channel.csv`
 
 ### Outcome
-Revenue data is prepared for ROAS calculation in Day 16.
+Revenue data is prepared for ROAS calculation in Day 1
+
+# Week 3 - Day 2
+
+## ROAS Calculation
+
+### Objective
+Calculate Return on Ad Spend (ROAS) for each marketing channel.
+
+### Tasks Completed
+- Calculated total revenue by channel.
+- Calculated total ad spend by channel.
+- Computed ROAS values.
+- Exported the ROAS report.
+
+### Output
+- roas_by_channel.csv
+
+### Outcome
+ROAS was successfully calculated for each marketing channel.
