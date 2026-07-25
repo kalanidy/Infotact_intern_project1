@@ -8,7 +8,7 @@ Data Engineer — Ad Spend data, DB schema, Fact table, funnel visual
 ## Status
 Week 1 - completed (Days 1-7)  
 Week 2 - completed (Day 8-14)  
-Week 3, Day 15 of 28 - in progress
+Week 3, Day 16 of 28 - in progress
 
 ## Files in this branch
 - `hiren_ad_spend.ipynb` — Week 1 EDA notebook (Complete)
@@ -201,6 +201,20 @@ Week 3, Day 15 of 28 - in progress
   `ad_spend` table total exactly — `Match: True`, no rows lost or
   double-counted across the four grouping levels
 
+### Day 16 — Calculate Cost Per Click (CPC) = Spend / Clicks
+- Confirmed no zero-click rows exist (no division-by-zero risk)
+- CPC calculated at the aggregate level (SUM(spend)/SUM(clicks) per
+  group), not averaged row-by-row, since row-level averaging would
+  over-weight low-volume rows and give a misleading number
+- CPC by channel: `paid_search` highest at $3.03/click, `email` lowest
+  at $2.71/click — a different ranking than Day 15's total spend
+  (Affiliate led there), confirming spend volume and CPC are
+  independent signals worth keeping distinct in Week 4's dashboard
+- Campaign #48 (highest total spend) does NOT appear in the top-5 CPC
+  list — its spend comes from volume/duration, not expensive clicks
+- Overall CPC: $2.8043 (total spend $26,876.24 / total clicks 9,584) —
+  headline number for Week 4's executive summary
+
 ## Findings worth remembering
 - Dataset was already very clean on delivery — no missing values, no duplicate IDs.
   Real cleaning work here was narrower than expected (just casing standardization).
@@ -213,5 +227,5 @@ Week 3, Day 15 of 28 - in progress
   Email/Organic/Paid Search/Social). Need a team decision on how this spend gets
   attributed before Week 3 Fact table work — flagged in main README.
 
-## Next up (Day 16)
-- Calculate Cost Per Click (CPC) = Spend / Clicks
+## Next up (Day 17)
+- Validate CPC output against raw click data
