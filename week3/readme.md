@@ -54,3 +54,21 @@ Compare ROAS values across First-Click, Last-Click and Linear attribution models
 
 ### Outcome
 ROAS comparison is ready for dashboard visualization.
+
+# Week 3 - Day 4
+
+## Date Dimension Design
+
+### Objective
+Design the Date Dimension table for analytics and reporting.
+
+### Tasks Completed
+- Created the `dim_date` table.
+- Added calendar attributes.
+- Prepared the table for reporting and dashboard joins.
+
+### Output
+- create_dim_date.sql
+
+### Outcome
+The Date Dimension table structure was successfully created.
