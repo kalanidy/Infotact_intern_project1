@@ -35,3 +35,22 @@ Calculate Return on Ad Spend (ROAS) for each marketing channel.
 
 ### Outcome
 ROAS was successfully calculated for each marketing channel.
+
+# Week 3 - Day 3
+
+## ROAS by Attribution Model
+
+### Objective
+Compare ROAS values across First-Click, Last-Click and Linear attribution models.
+
+### Tasks Completed
+- Calculated ROAS using First-Click Attribution.
+- Calculated ROAS using Last-Click Attribution.
+- Calculated ROAS using Linear Attribution.
+- Exported comparison report.
+
+### Output
+- roas_by_attribution.csv
+
+### Outcome
+ROAS comparison is ready for dashboard visualization.
