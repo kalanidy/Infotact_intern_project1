@@ -72,3 +72,21 @@ Design the Date Dimension table for analytics and reporting.
 
 ### Outcome
 The Date Dimension table structure was successfully created.
+
+# Week 3 - Day 5
+
+## Populate Date Dimension
+
+### Objective
+Populate the `dim_date` table with calendar dates.
+
+### Tasks Completed
+- Generated dates from 2021 to 2025.
+- Filled calendar attributes.
+- Inserted records into SQLite.
+
+### Output
+- Populated `dim_date` table
+
+### Outcome
+The Date Dimension is ready for joining with fact tables.
