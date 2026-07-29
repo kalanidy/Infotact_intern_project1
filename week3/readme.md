@@ -90,3 +90,18 @@ Populate the `dim_date` table with calendar dates.
 
 ### Outcome
 The Date Dimension is ready for joining with fact tables.
+
+# Week 3 - Day 6
+
+## Test Date Dimension Join
+
+### Objective
+Validate the relationship between the Date Dimension and Transactions table.
+
+### Tasks Completed
+- Joined dim_date with transactions.
+- Verified transaction counts and revenue by date.
+- Exported validation results.
+
+### Output
+- dim_date_join_validation.csv

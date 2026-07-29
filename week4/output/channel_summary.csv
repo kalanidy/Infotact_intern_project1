@@ -1,0 +1,22 @@
+attribution_model,traffic_source,total_revenue,total_conversions,unique_customers,avg_revenue,revenue_share
+First Touch,Affiliate,8676547.53,4681,4681,1853.57,14.3
+First Touch,Direct,8761245.01,4724,4724,1854.62,14.44
+First Touch,Display,8571936.3,4746,4746,1806.14,14.13
+First Touch,Email,8765366.75,4768,4768,1838.37,14.45
+First Touch,Paid Search,8616627.61,4660,4660,1849.06,14.2
+First Touch,Paid Social,8692448.4,4631,4631,1877.01,14.33
+First Touch,Referrals,8593063.58,4677,4677,1837.3,14.16
+Last Touch,Affiliate,8203931.86,4658,4658,1761.26,13.52
+Last Touch,Direct,9053598.16,4796,4796,1887.74,14.92
+Last Touch,Display,8621573.37,4699,4699,1834.77,14.21
+Last Touch,Email,9046418.83,4718,4718,1917.43,14.91
+Last Touch,Paid Search,8528064.38,4697,4697,1815.64,14.05
+Last Touch,Paid Social,8616031.7,4625,4625,1862.93,14.2
+Last Touch,Referrals,8607616.88,4694,4694,1833.75,14.19
+Linear,Affiliate,8506407.06,21184,14957,401.55,14.02
+Linear,Direct,8854846.96,21471,15130,412.41,14.59
+Linear,Display,8682491.9,21306,15061,407.51,14.31
+Linear,Email,8861061.91,21406,15134,413.95,14.6
+Linear,Paid Search,8618854.08,21261,15038,405.38,14.2
+Linear,Paid Social,8649320.29,21214,15007,407.72,14.25
+Linear,Referrals,8504252.98,21082,14880,403.39,14.02
