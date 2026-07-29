@@ -105,3 +105,24 @@ Validate the relationship between the Date Dimension and Transactions table.
 
 ### Output
 - dim_date_join_validation.csv
+
+# Week 3 Summary
+
+## Tasks Completed
+
+- Revenue by marketing channel
+- ROAS calculation by channel
+- ROAS comparison across attribution models
+- Created Date Dimension table
+- Populated Date Dimension
+- Validated joins with transaction data
+
+## Outputs
+
+- revenue_by_channel.csv
+- roas_by_channel.csv
+- roas_by_attribution.csv
+- dim_date table
+- dim_date_join_validation.csv
+
+## Status
